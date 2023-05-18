@@ -1,0 +1,28 @@
+
+-- CRIAÇÃO DE PROCEDURE -- 
+
+CREATE OR REPLACE PROCEDURE incluir_sergmercado -- COMANDO DE CRIAÇÃO - NOME DA PROCEDURE, PARÂMETROS DE INICIALIZAÇÃO --
+   (p_ID IN SEGMERCADO.ID%TYPE, p_DESCRICAO IN SEGMERCADO.DESCRICAO%TYPE)
+IS  -- DECLARAÇÃO DAS VARIÁVEIS
+BEGIN -- CORPO DA PROCEDURE
+   INSERT INTO SEGMERCADO (ID, DESCRICAO) VALUES (p_ID, UPPER(p_DESCRICAO));
+   COMMIT;
+END;
+
+
+
+
+-- EXECUÇÃO DA PROCEDURE -- 
+
+EXECUTE incluir_sergmercado (4,'Farmaceuticos');
+-- OU -- 
+BEGIN
+  incluir_sergmercado (4,'Farmaceuticos');
+END;
+
+
+
+
+
+select * from segmercado;
+

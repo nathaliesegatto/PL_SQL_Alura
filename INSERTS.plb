@@ -1,0 +1,14 @@
+-- INSERT EM SQL
+INSERT INTO segmercado (ID, DESCRICAO) VALUES (1, 'Varejo');
+
+-- INSERT EM PL-SQL
+DECLARE 
+  v_ID NUMBER (5):= 2;
+  v_DESCRICAO VARCHAR2 (100) := 'Industria';
+
+BEGIN
+  INSERT INTO segmercado (ID, DESCRICAO) VALUES (v_ID, v_DESCRICAO);
+  COMMIT;
+END;
+
+
